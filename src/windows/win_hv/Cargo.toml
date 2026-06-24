@@ -1,0 +1,35 @@
+[package]
+name = "win_hv"
+description = "Barevisor as a Windows driver"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+readme.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+test = false
+bench = false
+
+[dependencies]
+hv = { path = "../../hvcore" }
+spin = "0.10.0"
+wdk = "0.3.1"
+wdk-sys = "0.4.0"
+
+[build-dependencies]
+wdk-build = "0.4.0"
+
+[package.metadata.wdk.driver-model]
+driver-type = "KMDF"
+kmdf-version-major = 1
+target-kmdf-version-minor = 31

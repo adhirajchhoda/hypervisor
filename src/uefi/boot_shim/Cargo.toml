@@ -1,0 +1,23 @@
+[package]
+name = "boot_shim"
+description = "EFI application shim that loads the hypervisor driver then chainloads Windows"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+readme.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "boot_shim"
+test = false
+bench = false
+
+[dependencies]
+uefi = { version = "0.35.0", default-features = false }
